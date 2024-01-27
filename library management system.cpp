@@ -85,6 +85,9 @@ public:
     string get_name(){
         return this->name;
     }
+
+    virtual void displayDetails() = 0;//abstract class - abstraction
+
 };
 
 class fiction_book: public Book //inheritance
@@ -100,6 +103,14 @@ public:
         return this->genre;
     }
 
+    void displayDetails() //polymorphism
+    {
+        cout<<"The book name: "<<get_name()<<endl;
+        cout<<"The rating: "<<get_rating()<<endl;
+        cout<<"The type: "<<get_type()<<endl;
+        cout<<"The genre: "<<get_genre()<<endl;
+
+    }
 };
 
 
@@ -114,6 +125,14 @@ public:
     }
     string get_subject(){
         return this->subject;
+    }
+
+    void displayDetails() //polymorphism
+    {
+        cout<<"The book name: "<<get_name()<<endl;
+        cout<<"The rating: "<<get_rating()<<endl;
+        cout<<"The type: "<<get_type()<<endl;
+        cout<<"The subject: "<<get_subject()<<endl;
     }
 
 };
@@ -188,7 +207,7 @@ int main()
                 fiction_books[cf].set_type(y);
 
                 cout<<"Enter genre of book: ";
-                cin.ignore();
+                //cin.ignore();
                 getline(cin, z);
                 fiction_books[cf].set_genre(z);
 
@@ -206,7 +225,7 @@ int main()
                 non_fiction_books[cn].set_type(y);
 
                 cout<<"Enter subject of book: ";
-                cin.ignore();
+                //cin.ignore();
                 getline(cin, z);
                 non_fiction_books[cn].set_subject(z);
 
@@ -235,26 +254,19 @@ int main()
         else if(choice==3)
         {
             cout<<"~~FICTION BOOK DETAILS~~"<<endl;
+            cout << "=========================" << endl;
             for(int i=0;i<cf;i++)
             {
-                cout<<endl<<"Book number - "<<i+1<<endl;
-                cout<<"The book name: "<<fiction_books[i].get_name()<<endl;
-                cout<<"The rating: "<<fiction_books[i].get_rating()<<endl;
-                cout<<"The type: "<<fiction_books[i].get_type()<<endl;
-                cout<<"The genre: "<<fiction_books[i].get_genre()<<endl;
-
+                fiction_books[i].displayDetails();
             }
         }
         else if(choice==4)
         {
             cout<<"~~NON FICTION DETAILS~~"<<endl;
+            cout << "=========================" << endl;
             for(int i=0;i<cn;i++)
             {
-                cout<<endl<<"Book number - "<<i+1<<endl;
-                cout<<"The book name: "<<non_fiction_books[i].get_name()<<endl;
-                cout<<"The rating: "<<non_fiction_books[i].get_rating()<<endl;
-                cout<<"The type: "<<non_fiction_books[i].get_type()<<endl;
-                cout<<"The subject: "<<non_fiction_books[i].get_subject()<<endl;
+                non_fiction_books[i].displayDetails();
             }
         }
         else if(choice==5)
@@ -270,3 +282,5 @@ int main()
 
     return 0;
 }
+
+
