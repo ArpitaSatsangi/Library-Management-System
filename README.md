@@ -1,5 +1,5 @@
 # Library-Management-System
 
-OOPS concept - 
-Encapusaltion
-Inheritance
+## OOPS concept - 
+* Encapusaltion
+* Inheritance
