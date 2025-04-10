@@ -25,6 +25,7 @@ This project is organized into multiple files to ensure clarity, maintainability
    - Features separate workflows for **administrators** and **students**.
    - Administrators can add and manage books, while students can issue and return books.
    - Provides options to view lists of all books or filter them by type (fiction or non-fiction).
+   - Uses the _getch() function from <conio.h> to securely handle administrator password input, ensuring that characters are not displayed on the screen during input.
 
 ### 2. **Library Class (`library.h` and `library.cpp`)**
    - Defines the **`Library`** class, which serves as the core structure for managing book records.
@@ -47,6 +48,7 @@ This project is organized into multiple files to ensure clarity, maintainability
      - `non_fiction_book non_fiction_books[1000]` for non-fiction books.
    - Tracks the total count of each type (`count_book`, `count_fiction`, `count_nonfiction`).
    - Ensures centralized data management, making it easy to access and modify book records.
+   - Uses the extern keyword to allow these global variables and objects to be accessed across multiple files in the project, maintaining a clean and modular structure.
 
 ---
 
@@ -73,6 +75,8 @@ The system is designed to cater to two types of users: **administrators** and **
      - Updates the book's status, making it available for others.
 
 ### Additional Features
+- **Password Security**: Administrator password input is protected using _getch() to hide typed characters.
+- **Input Validation**: getInt ensures numeric inputs are properly validated, reducing input errors.
 - **Error Handling**: Prevents invalid operations, such as issuing unavailable books or returning unissued ones.
 - **Scalability**: The system can handle up to 2000 total books and allows for easy expansion.
 
@@ -93,8 +97,11 @@ During the development of this project, several design decisions were carefully 
 3. **Separate Files for Classes**
    - Splitting the project into multiple header and implementation files improves readability and debugging.
    - It also follows good software engineering practices, making future updates or additions straightforward.
+  
+4. **Use of extern in globals.h**
+   - Promotes modularity by allowing shared variables to be declared once and used across multiple files without redefining them.
 
-4. **User Interface**
+5. **User Interface**
    - A menu-driven interface was implemented to keep the system user-friendly.
    - Future enhancements could include a graphical user interface (GUI) or command-line argument parsing for advanced functionality.
 
