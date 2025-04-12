@@ -3,6 +3,19 @@
 #include "administrator.cpp"
 #include "student.cpp"
 
+string getPassword() {
+    string password;
+    char ch;
+
+    cout << "\t\t\t\t Enter password : ";
+    while ((ch = _getch()) != '\r') { // read until 'enter' key is pressed
+        password += ch;
+    }
+    cout << endl;
+
+    return password;
+}
+
 void LibraryMenu()
 {
     int choice;
@@ -29,10 +42,9 @@ void LibraryMenu()
     if (choice == 1)
     {
         cout << "\t\t\t\t Please login \n";
-        cout << "\t\t\t\t enter email : ";
+        cout << "\t\t\t\t Enter email : ";
         cin >> email;
-        cout << "\t\t\t\t password : ";
-        cin >> password;
+        password = getPassword();
 
         if (email == "arpita@gmail.com" && password == "arpita")
         {
