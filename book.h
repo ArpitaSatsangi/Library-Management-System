@@ -18,9 +18,6 @@ public:
     void set_rating(int rating);
     int get_rating();
 
-    void set_type(string type);  
-    string get_type(); 
-
     virtual void displayDetails() = 0;
 
 };

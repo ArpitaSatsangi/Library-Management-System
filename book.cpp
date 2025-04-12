@@ -17,15 +17,6 @@ int Book::get_rating() {
     return this->rating;
 }
 
-void Book::set_type(string type) {
-    this->type = type;
-}
-
-string Book::get_type() {    
-    return this->type;    
-}
-
-
 // fiction_book class methods
 void fiction_book::set_genre(string genre) {        
     this->genre = genre;    
@@ -37,10 +28,9 @@ string fiction_book::get_genre() {
     
 void fiction_book::displayDetails() //polymorphism    
 {        
-    cout << "The book name: " << get_name() << endl;        
-    cout << "The rating: " << get_rating() << endl;       
-    cout << "The type: " << get_type() << endl;            
-    cout << "The genre: " << get_genre() << endl;    
+    cout << "\t\t\t\t\t\t\t The book name: " << get_name() << endl;        
+    cout << "\t\t\t\t\t\t\t The rating: " << get_rating() << endl;       
+    cout << "\t\t\t\t\t\t\t The genre: " << get_genre() << endl;    
 }
 
 
@@ -55,9 +45,8 @@ string non_fiction_book::get_subject() {
 
 void non_fiction_book::displayDetails() //polymorphism
 {
-    cout << "The book name: " << get_name() << endl;
-    cout << "The rating: " << get_rating() << endl;
-    cout << "The type: " << get_type() << endl;
-    cout << "The subject: " << get_subject() << endl;
+    cout << "\t\t\t\t\t\t\t The book name: " << get_name() << endl;
+    cout << "\t\t\t\t\t\t\t The rating: " << get_rating() << endl;
+    cout << "\t\t\t\t\t\t\t The subject: " << get_subject() << endl;
 }
 

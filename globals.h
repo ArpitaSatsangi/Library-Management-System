@@ -4,13 +4,16 @@
 #include <stdlib.h>
 #include <conio.h>
 using namespace std;
+
 #include "library.h"
 #include "book.h"
 
-Library lib[2000];//objects
-fiction_book fiction_books[1000];
-non_fiction_book non_fiction_books[1000];
+//objects
+extern Library lib[2000];
+extern fiction_book fiction_books[1000];
+extern non_fiction_book non_fiction_books[1000];
 
-int count_book = 0;
-int count_fiction = 0;
-int count_nonfiction = 0;
+extern int count_book;
+extern int count_fiction;
+extern int count_nonfiction;
+
